@@ -10,7 +10,6 @@ export const Statistics = ({
 }) => {
   return (
     <div className={css.container}>
-      <p className={css.title}>Statistics</p>
       {total === 0 ? (
         children
       ) : (

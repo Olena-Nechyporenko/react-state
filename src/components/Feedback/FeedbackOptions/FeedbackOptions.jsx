@@ -1,22 +1,16 @@
 import css from './FeedbackOptions.module.css';
-export const FeedbackOptions = ({ onLeaveFeedback }) => {
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <ul className={css.list}>
-      <li>
-        <button onClick={onLeaveFeedback} className={css.btn} name="good">
-          Good
-        </button>
-      </li>
-      <li>
-        <button onClick={onLeaveFeedback} className={css.btn} name="neutral">
-          Neutral
-        </button>
-      </li>
-      <li>
-        <button onClick={onLeaveFeedback} className={css.btn} name="bad">
-          Bad
-        </button>
-      </li>
+      {options.map(option => {
+        return (
+          <li key={option}>
+            <button onClick={onLeaveFeedback} className={css.btn} name={option}>
+              {option}
+            </button>
+          </li>
+        );
+      })}
     </ul>
   );
 };
